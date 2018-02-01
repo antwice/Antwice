@@ -14,6 +14,7 @@
 		27F51F132022B735001085B2 /* AntwiceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 27F51F122022B735001085B2 /* AntwiceTests.m */; };
 		27F51F1E2022B736001085B2 /* AntwiceUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 27F51F1D2022B736001085B2 /* AntwiceUITests.m */; };
 		27F51F2D2022BE0B001085B2 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 27F51F2C2022BE0B001085B2 /* RootViewController.m */; };
+		99BEF66BCC155CD0164C3197 /* libPods-Antwice.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 12A4D47DD8FBFD4687DFAB27 /* libPods-Antwice.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +35,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		12A4D47DD8FBFD4687DFAB27 /* libPods-Antwice.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Antwice.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1FFACD80D2D603E1D0C26C37 /* Pods-Antwice.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Antwice.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Antwice/Pods-Antwice.debug.xcconfig"; sourceTree = "<group>"; };
 		27F51EF62022B733001085B2 /* Antwice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Antwice.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		27F51EF92022B734001085B2 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		27F51EFA2022B734001085B2 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -49,6 +52,7 @@
 		27F51F1F2022B736001085B2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		27F51F2B2022BE0B001085B2 /* RootViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
 		27F51F2C2022BE0B001085B2 /* RootViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
+		33843550F1407BB5EC88B478 /* Pods-Antwice.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Antwice.release.xcconfig"; path = "Pods/Target Support Files/Pods-Antwice/Pods-Antwice.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +60,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				99BEF66BCC155CD0164C3197 /* libPods-Antwice.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,6 +88,8 @@
 				27F51F112022B735001085B2 /* AntwiceTests */,
 				27F51F1C2022B735001085B2 /* AntwiceUITests */,
 				27F51EF72022B733001085B2 /* Products */,
+				294D25EDE70F929162CB08C4 /* Pods */,
+				72CFFAD899C99991D2912E8B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -99,6 +106,14 @@
 		27F51EF82022B733001085B2 /* Antwice */ = {
 			isa = PBXGroup;
 			children = (
+				27F51F2E2022C0C2001085B2 /* AppDelegate(应用入口) */,
+				27F51F2F2022C0D4001085B2 /* Modules(功能模块) */,
+				27F51F302022C0E2001085B2 /* Manager(管理模块) */,
+				27F51F312022C104001085B2 /* Utils(工具类) */,
+				27F51F332022C12D001085B2 /* ThridParty(第三方库) */,
+				27F51F322022C11E001085B2 /* Base(基类) */,
+				27F51F342022C139001085B2 /* Define(全局宏定义) */,
+				27F51F352022C146001085B2 /* Resource(资源文件夹) */,
 				27F51EF92022B734001085B2 /* AppDelegate.h */,
 				27F51EFA2022B734001085B2 /* AppDelegate.m */,
 				27F51F2B2022BE0B001085B2 /* RootViewController.h */,
@@ -129,6 +144,79 @@
 			path = AntwiceUITests;
 			sourceTree = "<group>";
 		};
+		27F51F2E2022C0C2001085B2 /* AppDelegate(应用入口) */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "AppDelegate(应用入口)";
+			sourceTree = "<group>";
+		};
+		27F51F2F2022C0D4001085B2 /* Modules(功能模块) */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Modules(功能模块)";
+			sourceTree = "<group>";
+		};
+		27F51F302022C0E2001085B2 /* Manager(管理模块) */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Manager(管理模块)";
+			sourceTree = "<group>";
+		};
+		27F51F312022C104001085B2 /* Utils(工具类) */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Utils(工具类)";
+			sourceTree = "<group>";
+		};
+		27F51F322022C11E001085B2 /* Base(基类) */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Base(基类)";
+			sourceTree = "<group>";
+		};
+		27F51F332022C12D001085B2 /* ThridParty(第三方库) */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "ThridParty(第三方库)";
+			sourceTree = "<group>";
+		};
+		27F51F342022C139001085B2 /* Define(全局宏定义) */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Define(全局宏定义)";
+			sourceTree = "<group>";
+		};
+		27F51F352022C146001085B2 /* Resource(资源文件夹) */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Resource(资源文件夹)";
+			sourceTree = "<group>";
+		};
+		294D25EDE70F929162CB08C4 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				1FFACD80D2D603E1D0C26C37 /* Pods-Antwice.debug.xcconfig */,
+				33843550F1407BB5EC88B478 /* Pods-Antwice.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		72CFFAD899C99991D2912E8B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				12A4D47DD8FBFD4687DFAB27 /* libPods-Antwice.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -136,9 +224,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 27F51F222022B736001085B2 /* Build configuration list for PBXNativeTarget "Antwice" */;
 			buildPhases = (
+				27F29227E65E7411EC0E6908 /* [CP] Check Pods Manifest.lock */,
 				27F51EF22022B732001085B2 /* Sources */,
 				27F51EF32022B732001085B2 /* Frameworks */,
 				27F51EF42022B732001085B2 /* Resources */,
+				32FF40CF4A72B8371D1F4124 /* [CP] Embed Pods Frameworks */,
+				41697837FC02854017DE2DED /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -255,6 +346,57 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		27F29227E65E7411EC0E6908 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Antwice-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		32FF40CF4A72B8371D1F4124 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Antwice/Pods-Antwice-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		41697837FC02854017DE2DED /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Antwice/Pods-Antwice-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		27F51EF22022B732001085B2 /* Sources */ = {
@@ -416,6 +558,7 @@
 		};
 		27F51F232022B736001085B2 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1FFACD80D2D603E1D0C26C37 /* Pods-Antwice.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -424,12 +567,13 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.antwice.Antwice;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
 		27F51F242022B736001085B2 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 33843550F1407BB5EC88B478 /* Pods-Antwice.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -438,7 +582,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.antwice.Antwice;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
