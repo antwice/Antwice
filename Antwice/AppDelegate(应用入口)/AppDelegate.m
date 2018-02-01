@@ -7,7 +7,8 @@
 //
 
 #import "AppDelegate.h"
-#import "RootViewController.h"
+#import "AppDelegate+PushService.h"
+
 
 @interface AppDelegate ()
 
@@ -18,12 +19,8 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
-    self.window=[[UIWindow alloc]initWithFrame:[[UIScreen mainScreen]bounds]];
-    self.window.backgroundColor=[UIColor whiteColor];
-    RootViewController *rootView=[[RootViewController alloc]init];
-    UINavigationController *rootNav=[[UINavigationController alloc]initWithRootViewController:rootView];
-    self.window.rootViewController=rootNav;
-    [self.window makeKeyAndVisible];
+    //初始化window
+    [self antInitWindow];
 
     return YES;
 }

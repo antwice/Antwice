@@ -14,6 +14,10 @@
 		27F51F132022B735001085B2 /* AntwiceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 27F51F122022B735001085B2 /* AntwiceTests.m */; };
 		27F51F1E2022B736001085B2 /* AntwiceUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 27F51F1D2022B736001085B2 /* AntwiceUITests.m */; };
 		27F51F2D2022BE0B001085B2 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 27F51F2C2022BE0B001085B2 /* RootViewController.m */; };
+		27F51F382022DC8B001085B2 /* AppDelegate+PushService.m in Sources */ = {isa = PBXBuildFile; fileRef = 27F51F372022DC8B001085B2 /* AppDelegate+PushService.m */; };
+		27F51F3B2022E5DF001085B2 /* AntNetworkRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 27F51F3A2022E5DF001085B2 /* AntNetworkRequest.m */; };
+		27F51F3E20230ACA001085B2 /* AntNetworkCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 27F51F3D20230ACA001085B2 /* AntNetworkCache.m */; };
+		27F51F4120231B43001085B2 /* AntNetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 27F51F4020231B43001085B2 /* AntNetworkManager.m */; };
 		99BEF66BCC155CD0164C3197 /* libPods-Antwice.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 12A4D47DD8FBFD4687DFAB27 /* libPods-Antwice.a */; };
 /* End PBXBuildFile section */
 
@@ -52,6 +56,15 @@
 		27F51F1F2022B736001085B2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		27F51F2B2022BE0B001085B2 /* RootViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
 		27F51F2C2022BE0B001085B2 /* RootViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
+		27F51F362022DC8B001085B2 /* AppDelegate+PushService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AppDelegate+PushService.h"; sourceTree = "<group>"; };
+		27F51F372022DC8B001085B2 /* AppDelegate+PushService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "AppDelegate+PushService.m"; sourceTree = "<group>"; };
+		27F51F392022E5DF001085B2 /* AntNetworkRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AntNetworkRequest.h; sourceTree = "<group>"; };
+		27F51F3A2022E5DF001085B2 /* AntNetworkRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AntNetworkRequest.m; sourceTree = "<group>"; };
+		27F51F3C20230ACA001085B2 /* AntNetworkCache.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AntNetworkCache.h; sourceTree = "<group>"; };
+		27F51F3D20230ACA001085B2 /* AntNetworkCache.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AntNetworkCache.m; sourceTree = "<group>"; };
+		27F51F3F20231B43001085B2 /* AntNetworkManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AntNetworkManager.h; sourceTree = "<group>"; };
+		27F51F4020231B43001085B2 /* AntNetworkManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AntNetworkManager.m; sourceTree = "<group>"; };
+		27F51F452023209B001085B2 /* AntNetworkUrl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AntNetworkUrl.h; sourceTree = "<group>"; };
 		33843550F1407BB5EC88B478 /* Pods-Antwice.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Antwice.release.xcconfig"; path = "Pods/Target Support Files/Pods-Antwice/Pods-Antwice.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -114,8 +127,6 @@
 				27F51F322022C11E001085B2 /* Base(基类) */,
 				27F51F342022C139001085B2 /* Define(全局宏定义) */,
 				27F51F352022C146001085B2 /* Resource(资源文件夹) */,
-				27F51EF92022B734001085B2 /* AppDelegate.h */,
-				27F51EFA2022B734001085B2 /* AppDelegate.m */,
 				27F51F2B2022BE0B001085B2 /* RootViewController.h */,
 				27F51F2C2022BE0B001085B2 /* RootViewController.m */,
 				27F51F022022B734001085B2 /* Assets.xcassets */,
@@ -147,6 +158,10 @@
 		27F51F2E2022C0C2001085B2 /* AppDelegate(应用入口) */ = {
 			isa = PBXGroup;
 			children = (
+				27F51EF92022B734001085B2 /* AppDelegate.h */,
+				27F51EFA2022B734001085B2 /* AppDelegate.m */,
+				27F51F362022DC8B001085B2 /* AppDelegate+PushService.h */,
+				27F51F372022DC8B001085B2 /* AppDelegate+PushService.m */,
 			);
 			path = "AppDelegate(应用入口)";
 			sourceTree = "<group>";
@@ -168,6 +183,7 @@
 		27F51F312022C104001085B2 /* Utils(工具类) */ = {
 			isa = PBXGroup;
 			children = (
+				27F51F4620232272001085B2 /* Network */,
 			);
 			path = "Utils(工具类)";
 			sourceTree = "<group>";
@@ -198,6 +214,20 @@
 			children = (
 			);
 			path = "Resource(资源文件夹)";
+			sourceTree = "<group>";
+		};
+		27F51F4620232272001085B2 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				27F51F392022E5DF001085B2 /* AntNetworkRequest.h */,
+				27F51F3A2022E5DF001085B2 /* AntNetworkRequest.m */,
+				27F51F3C20230ACA001085B2 /* AntNetworkCache.h */,
+				27F51F3D20230ACA001085B2 /* AntNetworkCache.m */,
+				27F51F3F20231B43001085B2 /* AntNetworkManager.h */,
+				27F51F4020231B43001085B2 /* AntNetworkManager.m */,
+				27F51F452023209B001085B2 /* AntNetworkUrl.h */,
+			);
+			path = Network;
 			sourceTree = "<group>";
 		};
 		294D25EDE70F929162CB08C4 /* Pods */ = {
@@ -403,8 +433,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				27F51F4120231B43001085B2 /* AntNetworkManager.m in Sources */,
+				27F51F382022DC8B001085B2 /* AppDelegate+PushService.m in Sources */,
 				27F51F092022B735001085B2 /* main.m in Sources */,
 				27F51EFB2022B734001085B2 /* AppDelegate.m in Sources */,
+				27F51F3E20230ACA001085B2 /* AntNetworkCache.m in Sources */,
+				27F51F3B2022E5DF001085B2 /* AntNetworkRequest.m in Sources */,
 				27F51F2D2022BE0B001085B2 /* RootViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
