@@ -11,13 +11,13 @@
 
 
 //测试环境
-#define API_HOST @"https://api.weibo.com/2/statuses/"
+#define API_HOST @"https://api.douban.com/v2/movie/us_box"
 
 //正式环境
 //#define API_HOST @"https://api.weibo.com/2/statuses/"
 
 //接口
-#define productContent [NSString stringWithFormat:@"%@productContent",API_HOST]
+#define productContent [NSString stringWithFormat:@"%@",API_HOST]
 
 
 

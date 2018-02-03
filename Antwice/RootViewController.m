@@ -7,7 +7,7 @@
 //
 
 #import "RootViewController.h"
-
+#import "AntNetworkHeader.h"
 #ifdef DEBUG
 #define ANTLog(...) printf("[%s] %s [第%d行]: %s\n", __TIME__ ,__PRETTY_FUNCTION__ ,__LINE__, [[NSString stringWithFormat:__VA_ARGS__] UTF8String])
 #else
@@ -23,6 +23,14 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor=[UIColor redColor];
+    
+    [AntNetworkManager productSuccessBlock:^(id returnData) {
+        NSLog(@"%@",returnData);
+    } failed:^(NSError *error) {
+        NSLog(@"%@",error);
+    }];
+    
+    
 }
 
 - (void)didReceiveMemoryWarning {

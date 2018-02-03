@@ -30,27 +30,27 @@ typedef NS_ENUM(NSInteger,AntNetworkStatusType) {
 /**
  * 请求成功的Block
  */
-typedef void (AntHttpRequestSuccess)(id responseObject);
+typedef void (^AntHttpRequestSuccess)(id responseObject);
 
 /**
  * 请求失败的Block
  */
-typedef void (AntHttpRequestFailed)(NSError *error);
+typedef void (^AntHttpRequestFailed)(NSError *error);
 
 /**
  * 缓存的Block
  */
-typedef void (AntHttpRequestCache)(id responseCache);
+typedef void (^AntHttpRequestCache)(id responseCache);
 
 /**
  * 上传下载进度
  */
-typedef void (AntNetworkProgress)(NSProgress *progress);
+typedef void (^AntNetworkProgress)(NSProgress *progress);
 
 /**
  * 检测网络状态
  */
-typedef void (AntNetworkStatus)(AntNetworkStatusType networkStatus);
+typedef void (^AntNetworkStatus)(AntNetworkStatusType networkStatus);
 
 
 @class AFHTTPSessionManager;
@@ -128,7 +128,7 @@ typedef void (AntNetworkStatus)(AntNetworkStatusType networkStatus);
  *  @param failure    请求失败的回调
  *
  */
-+(__kindof NSURLSessionTask *)uploadFileWithUrl:(NSString *)requestUrl
++ (__kindof NSURLSessionTask *)uploadFileWithUrl:(NSString *)requestUrl
                             parameters:(id)parameters
                                   name:(NSString *)name
                               filePath:(NSString *)filePath
@@ -151,7 +151,7 @@ typedef void (AntNetworkStatus)(AntNetworkStatusType networkStatus);
  *  @param failure    请求失败的回调
  *
  */
-+(__kindof NSURLSessionTask *)uploadImageWithUrl:(NSString *)requestUrl
++ (__kindof NSURLSessionTask *)uploadImageWithUrl:(NSString *)requestUrl
                                       parameters:(id)parameters
                                             name:(NSString *)name
                                           images:(NSArray<UIImage *> *)images

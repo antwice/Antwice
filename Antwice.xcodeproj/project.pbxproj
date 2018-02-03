@@ -41,6 +41,7 @@
 /* Begin PBXFileReference section */
 		12A4D47DD8FBFD4687DFAB27 /* libPods-Antwice.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Antwice.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1FFACD80D2D603E1D0C26C37 /* Pods-Antwice.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Antwice.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Antwice/Pods-Antwice.debug.xcconfig"; sourceTree = "<group>"; };
+		27B00D87202483F80038306D /* AntNetworkHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AntNetworkHeader.h; sourceTree = "<group>"; };
 		27F51EF62022B733001085B2 /* Antwice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Antwice.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		27F51EF92022B734001085B2 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		27F51EFA2022B734001085B2 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -226,6 +227,7 @@
 				27F51F3F20231B43001085B2 /* AntNetworkManager.h */,
 				27F51F4020231B43001085B2 /* AntNetworkManager.m */,
 				27F51F452023209B001085B2 /* AntNetworkUrl.h */,
+				27B00D87202483F80038306D /* AntNetworkHeader.h */,
 			);
 			path = Network;
 			sourceTree = "<group>";

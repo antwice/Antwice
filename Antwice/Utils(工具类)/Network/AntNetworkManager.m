@@ -7,19 +7,12 @@
 //
 
 #import "AntNetworkManager.h"
-
+#import "AntNetworkHeader.h"
 @implementation AntNetworkManager
 
 
-+ (void)productContentCountsuccessBlock:(AntHttpRequestSuccess)successBlock
-                                   parameters:(NSDictionary *)parameters
-                           failureBlock:(AntHttpRequestFailed)failureBlock
-                                showHUD:(BOOL)showHUD
-{
-    NSDictionary *dict=[[NSDictionary alloc]init];
-    [dict setValue:@"count" forKey:@"count"];
-    [dict setValue:@"access_token" forKey:@"access_token"];
-    [AntNetworkRequest postRequest:productContent parameters:dict success:successBlock failure:failureBlock];
++(void)productSuccessBlock:(success)success failed:(faild)faild{
+    [AntNetworkRequest getRequest:productContent parameters:nil success:success failure:faild];
 }
 
 

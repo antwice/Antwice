@@ -7,14 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "AntNetworkRequest.h"
-#import "AntNetworkUrl.h"
+
+typedef void (^success)(id returnData);
+typedef void (^faild)(NSError *error);
+
 @interface AntNetworkManager : NSObject
 
-//例如，充值按钮
-+ (void)productContentCountsuccessBlock:(AntHttpRequestSuccess)successBlock
-                                   parameters:(NSDictionary *)parameters
-                           failureBlock:(AntHttpRequestFailed)failureBlock
-                                showHUD:(BOOL)showHUD;
++(void)productSuccessBlock:(success)success failed:(faild)faild;
 
 @end

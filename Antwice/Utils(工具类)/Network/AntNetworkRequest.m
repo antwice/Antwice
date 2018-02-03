@@ -14,22 +14,50 @@
 static NSMutableArray *_allSessionTask;
 static AFHTTPSessionManager *_sessionManager;
 
++ (void)initialize {
+    _sessionManager = [AFHTTPSessionManager manager];
+    _sessionManager.requestSerializer.timeoutInterval = 30.f;
+    _sessionManager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json", @"text/html", @"text/json", @"text/plain", @"text/javascript", @"text/xml", @"image/*", nil];
+    // 打开状态栏的等待菊花
+//    [AFNetworkActivityIndicatorManager sharedManager].enabled = YES;
+}
+
+/**
+ 存储着所有的请求task数组
+ */
++ (NSMutableArray *)allSessionTask {
+    if (!_allSessionTask) {
+        _allSessionTask = [[NSMutableArray alloc] init];
+    }
+    return _allSessionTask;
+}
+
+//#pragma mark ————— 创建单例对象 —————
+//+ (AntNetworkRequest *)ShareInstance{
+//    static AntNetworkRequest *networkRequest=nil;
+//    static dispatch_once_t onceToken;
+//    dispatch_once(&onceToken, ^{
+//        networkRequest=[[AntNetworkRequest alloc]init];
+//    });
+//    return networkRequest;
+//}
+
 #pragma mark ————— GET请求 —————
-+(NSURLSessionTask *)getRequest:(NSString *)requestUrl parameters:(id)parameters success:(AntHttpRequestSuccess)success failure:(AntHttpRequestFailed)failure{
++ (NSURLSessionTask *)getRequest:(NSString *)requestUrl parameters:(id)parameters success:(AntHttpRequestSuccess)success failure:(AntHttpRequestFailed)failure{
     
-    return [self getRequest:requestUrl parameters:parameters success:success failure:failure];
+    return [self getRequest:requestUrl parameters:parameters responseCache:nil success:success failure:failure];
     
 }
 
 #pragma mark ————— POST请求 —————
-+(NSURLSessionTask *)postRequest:(NSString *)requestUrl parameters:(id)parameters success:(AntHttpRequestSuccess)success failure:(AntHttpRequestFailed)failure{
++ (NSURLSessionTask *)postRequest:(NSString *)requestUrl parameters:(id)parameters success:(AntHttpRequestSuccess)success failure:(AntHttpRequestFailed)failure{
     
-    return [self postRequest:requestUrl parameters:parameters success:success failure:failure];
+    return [self postRequest:requestUrl parameters:parameters responseCache:nil success:success failure:failure];
     
 }
 
 #pragma mark ————— GET请求,有缓存 —————
-+(NSURLSessionTask *)getRequest:(NSString *)requestUrl parameters:(id)parameters responseCache:(AntHttpRequestCache)responseCache success:(AntHttpRequestSuccess)success failure:(AntHttpRequestFailed)failure{
++ (NSURLSessionTask *)getRequest:(NSString *)requestUrl parameters:(id)parameters responseCache:(AntHttpRequestCache)responseCache success:(AntHttpRequestSuccess)success failure:(AntHttpRequestFailed)failure{
     
     //读取缓存
     responseCache!=nil ? responseCache([AntNetworkCache httpCacheForURL:requestUrl parameters:parameters]) : nil;
@@ -38,12 +66,15 @@ static AFHTTPSessionManager *_sessionManager;
     
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         
+    
         [[self allSessionTask] removeObject:task];
         success ? success(responseObject) : nil;
         //对数据进行异步缓存
         responseCache!=nil ? [AntNetworkCache setHttpCache:responseObject URL:requestUrl parameters:parameters] : nil;
         
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        
+        NSLog(@"%@",error);
         
         [[self allSessionTask] removeObject:task];
         failure ? failure(error) : nil;
@@ -57,7 +88,7 @@ static AFHTTPSessionManager *_sessionManager;
 }
 
 #pragma mark ————— POST请求,有缓存 —————
-+(NSURLSessionTask *)postRequest:(NSString *)requestUrl parameters:(id)parameters responseCache:(AntHttpRequestCache)responseCache success:(AntHttpRequestSuccess)success failure:(AntHttpRequestFailed)failure{
++ (NSURLSessionTask *)postRequest:(NSString *)requestUrl parameters:(id)parameters responseCache:(AntHttpRequestCache)responseCache success:(AntHttpRequestSuccess)success failure:(AntHttpRequestFailed)failure{
     
     //读取缓存
     responseCache!=nil ? responseCache([AntNetworkCache httpCacheForURL:requestUrl parameters:parameters]) : nil;
@@ -83,7 +114,7 @@ static AFHTTPSessionManager *_sessionManager;
 }
 
 #pragma mark ————— 上传文件 —————
-+(NSURLSessionTask *)uploadFileWithUrl:(NSString *)requestUrl parameters:(id)parameters name:(NSString *)name filePath:(NSString *)filePath progress:(AntNetworkProgress)progress success:(AntHttpRequestSuccess)success failure:(AntHttpRequestFailed)failure{
++ (NSURLSessionTask *)uploadFileWithUrl:(NSString *)requestUrl parameters:(id)parameters name:(NSString *)name filePath:(NSString *)filePath progress:(AntNetworkProgress)progress success:(AntHttpRequestSuccess)success failure:(AntHttpRequestFailed)failure{
     
     
     NSURLSessionTask *sessionTask=[_sessionManager POST:requestUrl parameters:parameters constructingBodyWithBlock:^(id<AFMultipartFormData>  _Nonnull formData) {
@@ -119,7 +150,7 @@ static AFHTTPSessionManager *_sessionManager;
 }
 
 #pragma mark ————— 上传多张图片 —————
-+(NSURLSessionTask *)uploadImageWithUrl:(NSString *)requestUrl parameters:(id)parameters name:(NSString *)name images:(NSArray<UIImage *> *)images fileNames:(NSArray<NSString *> *)fileNames imageScale:(CGFloat)imageScale imageType:(NSString *)imageType progress:(AntNetworkProgress)progress success:(AntHttpRequestSuccess)success failure:(AntHttpRequestFailed)failure{
++ (NSURLSessionTask *)uploadImageWithUrl:(NSString *)requestUrl parameters:(id)parameters name:(NSString *)name images:(NSArray<UIImage *> *)images fileNames:(NSArray<NSString *> *)fileNames imageScale:(CGFloat)imageScale imageType:(NSString *)imageType progress:(AntNetworkProgress)progress success:(AntHttpRequestSuccess)success failure:(AntHttpRequestFailed)failure{
     
     NSURLSessionTask *sessionTask =[_sessionManager POST:requestUrl parameters:parameters constructingBodyWithBlock:^(id<AFMultipartFormData>  _Nonnull formData) {
         
@@ -168,7 +199,7 @@ static AFHTTPSessionManager *_sessionManager;
 
 #pragma mark ————— 下载文件 —————
 
-+(NSURLSessionTask *)downloadWithURL:(NSString *)requestUrl fileDir:(NSString *)fileDir progress:(AntNetworkProgress)progress success:(void (^)(NSString *))success failure:(AntHttpRequestFailed)failure{
++ (NSURLSessionTask *)downloadWithURL:(NSString *)requestUrl fileDir:(NSString *)fileDir progress:(AntNetworkProgress)progress success:(void (^)(NSString *))success failure:(AntHttpRequestFailed)failure{
     
     NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:requestUrl]];
     __block NSURLSessionDownloadTask *downloadTask=[_sessionManager downloadTaskWithRequest:request progress:^(NSProgress * _Nonnull downloadProgress) {
@@ -207,18 +238,5 @@ static AFHTTPSessionManager *_sessionManager;
     return downloadTask;
     
 }
-
-
-/**
- 存储着所有的请求task数组
- */
-+ (NSMutableArray *)allSessionTask {
-    if (!_allSessionTask) {
-        _allSessionTask = [[NSMutableArray alloc] init];
-    }
-    return _allSessionTask;
-}
-
-
 
 @end
